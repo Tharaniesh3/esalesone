@@ -7,6 +7,7 @@ import Input from '@/components/ui/Input';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import ProductCard from '@/components/products/ProductCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -132,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Featured Categories */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -163,23 +164,14 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Trending Now</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {trendingProducts.map((product) => (
-              <div key={product.id} className="bg-gray-50 rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-64">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition">{product.name}</h3>
-                  <p className="text-gray-600 mb-2">${product.price}</p>
-                  <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
+              <ProductCard
+                key={product.id}
+                id={product.id.toString()}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+                category={product.category}
+              />
             ))}
           </div>
         </div>
