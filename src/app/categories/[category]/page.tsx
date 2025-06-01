@@ -35,7 +35,7 @@ const filters: Filter[] = [
 // Mock products data
 const products = [
   {
-    id: 1,
+    id: '1',
     name: 'Classic White T-Shirt',
     price: 29.99,
     image: '/images/products/tshirt.jpg',
@@ -43,7 +43,7 @@ const products = [
     isNew: true,
   },
   {
-    id: 2,
+    id: '2',
     name: 'Summer Dress',
     price: 49.99,
     image: '/images/products/dress.jpg',
@@ -51,14 +51,14 @@ const products = [
     discount: 20,
   },
   {
-    id: 3,
+    id: '3',
     name: 'Kids Sneakers',
     price: 39.99,
     image: '/images/products/sneakers.jpg',
     category: 'kids',
   },
   {
-    id: 4,
+    id: '4',
     name: 'Home Decor Set',
     price: 79.99,
     image: '/images/products/decor.jpg',
